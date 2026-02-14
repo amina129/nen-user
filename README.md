@@ -1,45 +1,15 @@
-Nen Grid Pathfinder 🔮
+Nen Grid Pathfinder
 
-A simple CLI tool to find valid paths through a Nen energy grid (inspired by Hunter x Hunter).
-Rules
-
-    Start at top-left [0][0]
-
-    Reach bottom-right [rows-1][cols-1]
-
-    Move only → right or ↓ down
-
-    Each step must go to a cell with HIGHER energy than current
-
-Quick Start
-bash
-
-python nen_grid.py
-
-Example
-text
-
-╔════════════════╗
-║  NEN GRID      ║
-╚════════════════╝
-
-  [1][2][3]
-  [4][5][6]
-  [7][8][9]
-
---------------------
-✅ PATH FOUND!
-
-Path:
-  (0,0)=1 → (0,1)=2 → (0,2)=3 → (1,2)=6 → (2,2)=9
-
+Finds a path from top-left to bottom-right in a grid moving only right or down, where each step must go to a cell with a higher value.
 How it works
 
-    Prints the grid
+    Starts at [0][0]
 
-    Tries to find a valid path (greedy: right first, then down)
+    At each cell, tries to move right first, then down
 
-    Backtracks if stuck
+    Only moves if next cell's value > current cell's value
 
-    Shows result
+    If stuck, backtracks to try other paths
+
+    Stops when reaching bottom-right or no moves left
 
